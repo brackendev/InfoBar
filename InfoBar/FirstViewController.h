@@ -13,4 +13,6 @@
 
 }
 
+- (IBAction)runAction;
+
 @end

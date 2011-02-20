@@ -7,7 +7,7 @@
 //
 
 #import "FirstViewController.h"
-
+#import "InfoBarAppDelegate.h"
 
 @implementation FirstViewController
 
@@ -18,6 +18,12 @@
     [super viewDidLoad];
 }
 */
+
+- (IBAction)runAction {
+    InfoBarAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    [delegate.infoBar showBarWithMessage:@"Action from View 1"];
+    [NSTimer scheduledTimerWithTimeInterval:5.0 target:delegate selector:@selector(hideInfoBar) userInfo:nil repeats:NO];
+}
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

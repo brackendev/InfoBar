@@ -15,13 +15,27 @@
 
 @synthesize tabBarController=_tabBarController;
 
+@synthesize infoBar;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     // Add the tab bar controller's current view as a subview of the window
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
+    
+    // Add the infoBar
+    infoBar = [[JBInfoBar alloc] initWithFrame:CGRectMake(0, self.tabBarController.tabBar.frame.origin.y,
+                                                          self.tabBarController.tabBar.frame.size.width, 20)];
+    [self.tabBarController.view insertSubview:infoBar belowSubview:self.tabBarController.tabBar];
+    [infoBar showBarWithMessage:@"Test Up!"];
+    
     return YES;
+}
+
+- (void)hideInfoBar 
+{
+    [infoBar hiddenBarWithMessage:@"Finished!"];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
