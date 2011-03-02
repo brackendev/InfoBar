@@ -21,7 +21,7 @@
 @property (readonly,assign) BOOL isHidden;
 
 - (void)showBarWithMessage:(NSString *)message;
-- (void)hiddenBarWithMessage:(NSString *)message;
+- (void)hideBarWithMessage:(NSString *)message;
 - (void)setMessage:(NSString *)message;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "InfoBarAppDelegate.h"
+#import "JBInfoBarManager.h"
 
 @implementation InfoBarAppDelegate
 
@@ -14,8 +15,6 @@
 @synthesize window=_window;
 
 @synthesize tabBarController=_tabBarController;
-
-@synthesize infoBar;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -25,17 +24,18 @@
     [self.window makeKeyAndVisible];
     
     // Add the infoBar
-    infoBar = [[JBInfoBar alloc] initWithFrame:CGRectMake(0, self.tabBarController.tabBar.frame.origin.y,
-                                                          self.tabBarController.tabBar.frame.size.width, 20)];
-    [self.tabBarController.view insertSubview:infoBar belowSubview:self.tabBarController.tabBar];
-    [infoBar showBarWithMessage:@"Test Up!"];
+    [[JBInfoBarManager sharedManager] initInfoBarWithFrame:CGRectMake(0, self.tabBarController.tabBar.frame.origin.y,
+                                                                      self.tabBarController.tabBar.frame.size.width, 20)];
+    
+    [self.tabBarController.view insertSubview:[[JBInfoBarManager sharedManager] infoBar] belowSubview:self.tabBarController.tabBar];
+    [[JBInfoBarManager sharedManager] showInfoBarWithMessage:@"Test Up!"];
     
     return YES;
 }
 
 - (void)hideInfoBar 
 {
-    [infoBar hiddenBarWithMessage:@"Finished!"];
+    [[JBInfoBarManager sharedManager] hideInfoBarWithMessage:@"Finished!"];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

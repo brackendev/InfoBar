@@ -49,8 +49,9 @@
     }
 }
 
-- (void)hiddenBarWithMessage:(NSString *)message {
-    [self setMessage:message];
+- (void)hideBarWithMessage:(NSString *)message {
+    if (message)
+        [self setMessage:message];
     if (!isHidden) {
         [UIView transitionWithView:self duration:1.5
                            options:UIViewAnimationOptionTransitionNone

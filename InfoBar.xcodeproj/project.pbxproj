@@ -21,6 +21,7 @@
 		5B7A0B851311522400FE6193 /* JBInfoBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7A0B841311522400FE6193 /* JBInfoBar.m */; };
 		5B7A0B8D131153F900FE6193 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7A0B8C131153F900FE6193 /* Icon@2x.png */; };
 		5B7A0B8F1311540100FE6193 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B7A0B8E1311540100FE6193 /* Icon.png */; };
+		79438EEB131E5A880057CEAB /* JBInfoBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 79438EEA131E5A880057CEAB /* JBInfoBarManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		5B7A0B841311522400FE6193 /* JBInfoBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBInfoBar.m; sourceTree = "<group>"; };
 		5B7A0B8C131153F900FE6193 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		5B7A0B8E1311540100FE6193 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		79438EE9131E5A880057CEAB /* JBInfoBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBInfoBarManager.h; sourceTree = "<group>"; };
+		79438EEA131E5A880057CEAB /* JBInfoBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBInfoBarManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 			children = (
 				5B7A0B831311522400FE6193 /* JBInfoBar.h */,
 				5B7A0B841311522400FE6193 /* JBInfoBar.m */,
+				79438EE9131E5A880057CEAB /* JBInfoBarManager.h */,
+				79438EEA131E5A880057CEAB /* JBInfoBarManager.m */,
 			);
 			name = InfoBarView;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				5B5FB2971311514600719F62 /* FirstViewController.m in Sources */,
 				5B5FB29A1311514600719F62 /* SecondViewController.m in Sources */,
 				5B7A0B851311522400FE6193 /* JBInfoBar.m in Sources */,
+				79438EEB131E5A880057CEAB /* JBInfoBarManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
