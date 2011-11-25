@@ -20,6 +20,10 @@
 
 @property (readonly,assign) BOOL isHidden;
 
+- (id)initWithFrame:(CGRect)frame
+    backgroundColor:(UIColor *)bColor
+          textColor:(UIColor *)tColor
+           textFont:(UIFont *)tFont;
 - (void)showBarWithMessage:(NSString *)message;
 - (void)hideBarWithMessage:(NSString *)message;
 - (void)setMessage:(NSString *)message;

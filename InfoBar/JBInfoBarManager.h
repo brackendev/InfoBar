@@ -17,7 +17,10 @@
 
 + (JBInfoBarManager *)sharedManager;
 
-- (void)initInfoBarWithFrame:(CGRect)frame;
+- (void)initInfoBarWithFrame:(CGRect)frame
+             backgroundColor:(UIColor *)bColor
+                   textColor:(UIColor *)tColor
+                    textFont:(UIFont *)tFont;
 
 - (void)showInfoBarWithMessage:(NSString *)message;
 - (void)hideInfoBarWithMessage:(NSString *)message;

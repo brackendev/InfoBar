@@ -27,12 +27,18 @@ static JBInfoBarManager *sharedJBInfoBarManager = nil;
 #pragma mark -
 #pragma mark Manager
 
-- (void)initInfoBarWithFrame:(CGRect)frame {
+- (void)initInfoBarWithFrame:(CGRect)frame
+             backgroundColor:(UIColor *)bColor
+                   textColor:(UIColor *)tColor
+                    textFont:(UIFont *)tFont {
     if (infoBar) {
         [infoBar removeFromSuperview];
         [infoBar release], infoBar = nil;
     }
-    infoBar = [[JBInfoBar alloc] initWithFrame:frame];
+    infoBar = [[JBInfoBar alloc] initWithFrame:frame
+                               backgroundColor:bColor
+                                     textColor:tColor
+                                      textFont:tFont];
 }
 
 - (void)showInfoBarWithMessage:(NSString *)message {

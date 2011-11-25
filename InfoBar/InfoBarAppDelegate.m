@@ -25,7 +25,10 @@
     
     // Add the infoBar
     [[JBInfoBarManager sharedManager] initInfoBarWithFrame:CGRectMake(0, self.tabBarController.tabBar.frame.origin.y,
-                                                                      self.tabBarController.tabBar.frame.size.width, 20)];
+                                                                      self.tabBarController.tabBar.frame.size.width, 30)
+                                           backgroundColor:[UIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:0.6f]
+                                                 textColor:[UIColor whiteColor]
+                                                  textFont:[UIFont systemFontOfSize:17.0f]];
     
     [self.tabBarController.view insertSubview:[[JBInfoBarManager sharedManager] infoBar] belowSubview:self.tabBarController.tabBar];
     [[JBInfoBarManager sharedManager] showInfoBarWithMessage:@"Test Up!"];

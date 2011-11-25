@@ -13,6 +13,9 @@
 @synthesize isHidden;
 
 - (id)initWithFrame:(CGRect)frame
+    backgroundColor:(UIColor *)bColor
+          textColor:(UIColor *)tColor
+           textFont:(UIFont *)tFont
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -21,14 +24,29 @@
         hiddenCP = CGPointMake(frame.origin.x + frame.size.width / 2.0, frame.origin.y + frame.size.height / 2.0);
         showCP = CGPointMake(frame.origin.x + frame.size.width / 2.0, frame.origin.y - frame.size.height / 2.0);
         
-        self.backgroundColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:0.5];
+        if (!bColor) {
+            [self setBackgroundColor:[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:0.5]];
+        } else {
+            [self setBackgroundColor:bColor];
+        }
         
         infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-        infoLabel.textAlignment = UITextAlignmentCenter;
-        infoLabel.text = @"Finished";
-        infoLabel.font = [UIFont fontWithName:@"MavenPro" size:14];
-        infoLabel.textColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.0];
-        infoLabel.backgroundColor = [UIColor clearColor];
+        [infoLabel setTextAlignment:UITextAlignmentCenter];
+
+        if (!tFont) {
+            [infoLabel setFont:[UIFont fontWithName:@"MavenPro" size:14]];
+        } else {
+            [infoLabel setFont:tFont];
+        }
+        
+        if (!tColor) {
+            [infoLabel setTextColor:[UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.0]];
+        } else {
+            [infoLabel setTextColor:tColor];
+        }
+        
+        [infoLabel setBackgroundColor:[UIColor clearColor]];
+        
         [self addSubview:infoLabel];
     }
     return self;
